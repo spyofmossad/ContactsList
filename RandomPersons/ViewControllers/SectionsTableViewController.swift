@@ -15,6 +15,8 @@ class SectionsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = "Persons List"
+        
         let baseTabBar = tabBarController as! BaseTabBarController
         persons = baseTabBar.persons
     }

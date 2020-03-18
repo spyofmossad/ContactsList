@@ -10,7 +10,6 @@ import UIKit
 
 class DetailsViewController: UIViewController {
     
-    @IBOutlet var fullName: UILabel!
     @IBOutlet var email: UILabel!
     @IBOutlet var phoneNumber: UILabel!
     
@@ -19,7 +18,7 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fullName.text = person.fullName
+        self.navigationItem.title = person.fullName
         email.text = "Email: \(person.email)"
         phoneNumber.text = "Phone number: \(person.phone)"
     }

@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Persons-->
+        <!--Persons list-->
         <scene sceneID="58m-vE-iLM">
             <objects>
                 <tableViewController id="ZkU-6O-0Du" customClass="PersonsTableViewController" customModule="RandomPersons" customModuleProvider="target" sceneMemberID="viewController">
@@ -43,7 +43,9 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="o41-9T-w3M"/>
-                    <navigationItem key="navigationItem" title="Persons" id="qgq-l5-0pT"/>
+                    <navigationItem key="navigationItem" title="Persons list" id="qgq-l5-0pT">
+                        <barButtonItem key="backBarButtonItem" title="Persons list" id="N7f-oK-BuH"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eQG-jB-goL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -73,16 +75,17 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" systemItem="contacts" id="soQ-U1-9HF"/>
+                    <nil key="simulatedTopBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W2d-ht-ZkY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1582" y="562"/>
         </scene>
-        <!--Base Tab Bar Controller-->
+        <!--Contacts list-->
         <scene sceneID="lhx-D7-ZnS">
             <objects>
                 <tabBarController id="1zs-5n-g2T" customClass="BaseTabBarController" customModule="RandomPersons" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="oEs-fa-9Ye"/>
+                    <navigationItem key="navigationItem" title="Contacts list" largeTitleDisplayMode="always" id="oEs-fa-9Ye"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pOn-Ph-zLs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -106,16 +109,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="yGO-Gk-2Wm">
-                                <rect key="frame" x="19" y="60" width="337.5" height="154.5"/>
+                                <rect key="frame" x="19" y="60" width="337.5" height="81"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FullName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDX-bM-0nl">
-                                        <rect key="frame" x="0.0" y="0.0" width="337.5" height="33.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="6u2-VB-Kgx">
-                                        <rect key="frame" x="0.0" y="73.5" width="117" height="81"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="117" height="81"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fx-GL-S6i">
                                                 <rect key="frame" x="0.0" y="0.0" width="45.5" height="20.5"/>
@@ -132,9 +129,6 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="DDX-bM-0nl" firstAttribute="width" secondItem="yGO-Gk-2Wm" secondAttribute="width" id="zvv-32-Qs2"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -145,10 +139,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yxJ-sX-pr9"/>
                     </view>
-                    <navigationItem key="navigationItem" id="vps-ej-ddD"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="vps-ej-ddD"/>
                     <connections>
                         <outlet property="email" destination="0fx-GL-S6i" id="8eh-00-XQK"/>
-                        <outlet property="fullName" destination="DDX-bM-0nl" id="bUj-Fb-XPi"/>
                         <outlet property="phoneNumber" destination="7Yw-f8-fRq" id="aYa-xl-gms"/>
                     </connections>
                 </viewController>
@@ -160,8 +153,8 @@
         <scene sceneID="vn0-P4-gOd">
             <objects>
                 <navigationController id="54W-l7-YWl" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mK5-gd-o3S">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="mK5-gd-o3S">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
